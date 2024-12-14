@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Answer;
+use App\Models\UserSurvey;
 
 class adminNavController extends Controller
 {
@@ -283,6 +284,23 @@ class adminNavController extends Controller
     public function showContact()
     {
         return view("admin.app.contact");
+    }
+
+    public function dataSurvey()
+    {
+        $keyword = request('search');
+        $datas = UserSurvey::query();
+
+        if ($keyword) {
+            $datas = $datas->where('name', 'LIKE', "%{$keyword}%")
+                ->orWhere('jabatan', 'LIKE', "%{$keyword}%")
+                ->orWhere('email', 'LIKE', "%{$keyword}%")
+                ->orWhere('phone', 'LIKE', "%{$keyword}%")
+                ->orWhere('institution_name', 'LIKE', "%{$keyword}%");
+        }
+
+        $datas = $datas->paginate(10);
+        return view("admin.app.data_user_survey", compact('datas'));
     }
 
     public function showSurvey()

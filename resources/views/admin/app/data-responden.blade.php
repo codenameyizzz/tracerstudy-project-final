@@ -30,7 +30,7 @@
             <td>{{ $d->Fakultas->name }}</td>
             <td>{{ $d->angkatan }}</td>
             <td>
-                @if (count($user->Responses) == 0)
+                @if (count($user->Answers) == 0)
                 <span class="text-danger badge">Belum Mengisi</span>
                 @else
                 <span class="text-success badge">Sudah Mengisi</span>

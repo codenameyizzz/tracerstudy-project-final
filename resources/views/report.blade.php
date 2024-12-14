@@ -51,6 +51,7 @@
                 data: {fakultas_id: fakultas_id},
                 success: function (data) {
                     $('#prodi').empty();
+                    $('#angkatan').empty();
                     $('#prodi').append('<option value="">Pilih Prodi</option>');
                     $.each(data, function (key, value) {
                         $('#prodi').append('<option value="'+value.id+'">'+value.name+'</option>');
@@ -84,10 +85,12 @@
         });
 
         function searchData() {
+            var fakultas_id = $('#fakultas').val();
             var prodi_id = $('#prodi').val();
             var angkatan = $('#tahun_angkatan').val();
 
-            if (prodi_id == '' || angkatan == '') {
+            if (fakultas_id == '') {
+                $('#data').html('<p>No Data</p>');
                 return;
             }
 
@@ -95,6 +98,7 @@
                 type: "GET",
                 url: '{{ url('/get-report') }}',
                 data: {
+                    fakultas_id: fakultas_id,
                     prodi_id: prodi_id,
                     angkatan: angkatan
                 },

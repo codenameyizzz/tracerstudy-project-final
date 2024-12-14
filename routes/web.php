@@ -4,6 +4,7 @@ use App\Http\Controllers\adminNavController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\QuestionnaireController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\UserSurveyController;
 use Illuminate\Support\Facades\Route;
 
 // Public Routes
@@ -25,9 +26,8 @@ Route::middleware(['role:alumni'])->group(function () {
     Route::get('/questionnaire/form-mencari-kerja', [QuestionnaireController::class, 'viewMencariKerja'])->name('questionnaire.form-mencari-kerja');
 });
 
-Route::get('/usersurvey', function () {
-    return view('usersurvey');
-})->name('usersurvey');  // Tidak ada middleware 'auth'
+Route::get('/usersurvey', [UserSurveyController::class, 'view'])->name('usersurvey');  // Tidak ada middleware 'auth'
+Route::post('/usersurvey', [UserSurveyController::class, 'store'])->name('usersurvey.store');  // Tidak ada middleware 'auth'
 
 Route::get('/report', [ReportController::class, 'view'])->name('report');
 Route::get('/get-prodi', [ReportController::class, 'getProdi'])->name('report.get-prodi');
@@ -69,6 +69,7 @@ Route::group(['middleware' => ['auth', 'role:admin']], function () {
     Route::get('/admin/faq', [adminNavController::class, 'showFAQ'])->name('data.faq');
     Route::get('/admin/contact', [adminNavController::class, 'showContact'])->name('data.contact');
     Route::get('/admin/user-survey', [adminNavController::class, 'showSurvey'])->name('user.survey');
+    Route::get('/admin/user-survey/data', [adminNavController::class, 'dataSurvey'])->name('data.data-user-survey');
 
     // Logout route for admin
     Route::post('/admin/logout', [AuthController::class, 'getLogout'])->name('admin.logout');

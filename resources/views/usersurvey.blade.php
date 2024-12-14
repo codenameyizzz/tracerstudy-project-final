@@ -6,7 +6,7 @@
 <section class="questionnaire-section">
     <div class="container">
         <h2>User Survey</h2>
-        <form action="{{ route('questionnaire.submit') }}" method="post">
+        <form action="{{ route('usersurvey.store') }}" method="post">
             @csrf
             <!-- Segmen 1 -->
             <div class="question-card">
@@ -18,8 +18,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="name">Jabatan:</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="jabatan">Jabatan:</label>
+                    <input type="text" id="jabatan" name="jabatan" required>
                 </div>
 
                 <div class="form-group">
@@ -40,12 +40,12 @@
 
                 <div class="form-group">
                     <label for="jumlah-lulusan">Berapakah jumlah lulusan kami yang bekerja di instansi/perusahaan anda?</label>
-                    <input type="number" id="jumlah-lulusan" name="jumlah-lulusan" placeholder="Masukkan jumlah lulusan" required>
+                    <input type="number" id="jumlah_lulusan" name="jumlah_lulusan" placeholder="Masukkan jumlah lulusan" required>
                 </div>
 
                 <div class="form-group">
                     <label for="ipk-minimal">Berapa nilai IPK minimal untuk bekerja di instansi/perusahaan Bapak/Ibu?</label>
-                    <input type="text" id="ipk-minimal" name="ipk-minimal" placeholder="Contoh: 4.00" requied>
+                    <input type="text" id="ipk-minimal" name="ipk_minimal" placeholder="Contoh: 4.00" requied>
                 </div>
             </div>
 
@@ -56,83 +56,60 @@
 
                 <div class="form-group">
                     <label for="institution-name">Nama:</label>
-                    <input type="text" id="institution-name" name="institution-name" placeholder="Masukkan nama lembaga/perusahaan" required>
+                    <input type="text" id="institution-name" name="institution_name" placeholder="Masukkan nama lembaga/perusahaan" required>
                 </div>
 
                 <div class="form-group">
                     <label for="address">Alamat:</label>
-                    <textarea id="address" name="address" placeholder="Masukkan alamat lengkap lembaga/perusahaan" rows="2" required></textarea>
+                    <textarea id="address" name="institution_address" placeholder="Masukkan alamat lengkap lembaga/perusahaan" rows="2" required></textarea>
                 </div>
 
                 <div class="form-horizontal">
                     <div class="form-group">
                         <label for="province">Provinsi:</label>
-                        <input type="text" id="province" name="province" placeholder="Provinsi" required>
+                        <input type="text" id="province" name="institution_province" placeholder="Provinsi" required>
                     </div>
                     <div class="form-group">
                         <label for="city">Kota/Kabupaten:</label>
-                        <select id="city" name="city" required>
-                            <option value="" disabled selected>Pilih Kota/Kabupaten</option>
-                        </select>
+                        <input type="text" id="city" name="institution_city" placeholder="Kota/Kabupaten" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="institution-email" placeholder="Masukkan email lembaga/perusahaan" required>
+                    <input type="email" id="email" name="institution_email" placeholder="Masukkan email lembaga/perusahaan" required>
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Nomor Telp/WA:</label>
-                    <input type="tel" id="phone" name="institution-phone" placeholder="Masukkan nomor telepon/WA lembaga/perusahaan" required>
+                    <input type="tel" id="phone" name="institution_phone" placeholder="Masukkan nomor telepon/WA lembaga/perusahaan" required>
                 </div>
 
                 <div class="form-horizontal">
                     <div class="form-group">
                         <label for="business-field">Bidang Usaha:</label>
-                        <select id="business-field" name="business-field" required>
+                        <select id="business-field" name="institution_business_field" required>
                             <option value="" disabled selected>Pilih Bidang Usaha</option>
+                            <option value="Pertanian, Kehutanan, dan Perikanan">Pertanian, Kehutanan, dan Perikanan</option>
+                            <option value="Industri Pengolahan">Industri Pengolahan</option>
+                            <option value="Konstruksi">Konstruksi</option>
+                            <option value="Perdagangan Besar dan Eceran">Perdagangan Besar dan Eceran</option>
+                            <option value="Transportasi dan Pergudangan">Transportasi dan Pergudangan</option>
+                            <option value="Informasi dan Komunikasi">Informasi dan Komunikasi</option>
+                            <option value="Keuangan dan Asuransi">Keuangan dan Asuransi</option>
+                            <option value="Real Estat">Real Estat</option>
+                            <option value="Pendidikan">Pendidikan</option>
+                            <option value="Kesehatan dan Kegiatan Sosial">Kesehatan dan Kegiatan Sosial</option>
+                            <option value="Jasa Lainnya">Jasa Lainnya</option>
                         </select>
                     </div>
                 </div>
             </div>
 
-
-            <!-- Segmen 4 -->
-            <div class="question-card">
-            <h3>4. Identitas Lembaga/Perusahaan</h3>
-
-            <div class="form-group">
-                <label for="city">Kota/Kabupaten:</label>
-                <select id="city" name="city" required>
-                    <option value="" disabled selected>Pilih Kota/Kabupaten</option>
-                </select>
-            </div>
-
-            <!-- Dropdown Bidang Usaha -->
-            <div class="form-group">
-                <label for="business-field">Bidang Usaha:</label>
-                <select id="business-field" name="business-field" required>
-                    <option value="" disabled selected>Pilih Bidang Usaha</option>
-                    <option value="Pertanian, Kehutanan, dan Perikanan">Pertanian, Kehutanan, dan Perikanan</option>
-                    <option value="Industri Pengolahan">Industri Pengolahan</option>
-                    <option value="Konstruksi">Konstruksi</option>
-                    <option value="Perdagangan Besar dan Eceran">Perdagangan Besar dan Eceran</option>
-                    <option value="Transportasi dan Pergudangan">Transportasi dan Pergudangan</option>
-                    <option value="Informasi dan Komunikasi">Informasi dan Komunikasi</option>
-                    <option value="Keuangan dan Asuransi">Keuangan dan Asuransi</option>
-                    <option value="Real Estat">Real Estat</option>
-                    <option value="Pendidikan">Pendidikan</option>
-                    <option value="Kesehatan dan Kegiatan Sosial">Kesehatan dan Kegiatan Sosial</option>
-                    <option value="Jasa Lainnya">Jasa Lainnya</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Segmen 5-->
+        <!-- Segmen 4-->
         <div class="question-card">
         <h3 onclick="toggleSection('etika-section')" style="cursor: pointer;">
-            Etika <span id="etika-toggle" style="float: right;"></span>
+            4. Etika <span id="etika-toggle" style="float: right;"></span>
         </h3>
         <div id="etika-section" class="animated-section">
             <div class="form-group">
