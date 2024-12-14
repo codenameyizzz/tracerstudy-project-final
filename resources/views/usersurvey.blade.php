@@ -147,7 +147,7 @@
             <!-- Tambahkan pertanyaan lainnya sesuai kebutuhan -->
 
             <div class="submit-button">
-                <button type="submit" class="btn">Kirim Kuisioner</button>
+                <button type="submit-button" class="btn">Kirim Kuisioner</button>
             </div>
         </form>
     </div>

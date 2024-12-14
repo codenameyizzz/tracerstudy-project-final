@@ -40,7 +40,7 @@
                     @endphp
                     
                     <input type="radio" id="status_bekerja" name="status" value="Bekerja" {{ $status == 'Bekerja' ? 'checked' : '' }} required>
-                    <label for="status_bekerja">Bekerja (full-time / part-time) <input type="radio" id="status_bekerja" name="status" value="Bekerja" {{ $status == 'Bekerja' ? 'checked' : '' }} required> </label> 
+                    <label for="status_bekerja">Bekerja (full-time / part-time)  </label> 
 
                     <input type="radio" id="status_belum_bekerja" name="status" value="Belum memungkinkan bekerja" {{ $status == 'Belum memungkinkan bekerja' ? 'checked' : '' }} required>
                     <label for="status_belum_bekerja">Belum memungkinkan bekerja</label>
