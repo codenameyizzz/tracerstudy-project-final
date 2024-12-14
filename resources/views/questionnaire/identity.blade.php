@@ -38,8 +38,9 @@
                     @php
                         $status = auth()->user()->status ?? '';
                     @endphp
+                    
                     <input type="radio" id="status_bekerja" name="status" value="Bekerja" {{ $status == 'Bekerja' ? 'checked' : '' }} required>
-                    <label for="status_bekerja">Bekerja (full-time / part-time)</label>
+                    <label for="status_bekerja">Bekerja (full-time / part-time) <input type="radio" id="status_bekerja" name="status" value="Bekerja" {{ $status == 'Bekerja' ? 'checked' : '' }} required> </label> 
 
                     <input type="radio" id="status_belum_bekerja" name="status" value="Belum memungkinkan bekerja" {{ $status == 'Belum memungkinkan bekerja' ? 'checked' : '' }} required>
                     <label for="status_belum_bekerja">Belum memungkinkan bekerja</label>
@@ -56,7 +57,7 @@
             </div>
             <!-- Tombol Kirim -->
             <div class="submit-button">
-                <button type="submit">Kirim</button>
+                <button type="submit" class="btn">Kirim</button>
             </div>
         </form>
     </div>
