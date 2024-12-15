@@ -1,7 +1,8 @@
 <nav>
     <div class="container">
         <div class="logo">
-            <h1>Tracer<span>Study</span> IT Del</h1>
+            <img src="image/logo-del2.png">
+            {{-- <h1>Tracer<span>Study</span> IT Del</h1> --}}
         </div>
         <ul class="nav-links">
             <li><a href="{{ url('/') }}">Beranda</a></li>
@@ -19,6 +20,9 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
                             <li><a class="dropdown-item" href="#">Email: {{ Auth::user()->email }}</a></li>
+                            @if(Auth::user()->role === 'admin')
+                                <li><a class="dropdown-item" href="{{ route('dashboard') }}">Admin Dashboard</a></li>
+                            @endif
                             <li>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf

@@ -18,18 +18,33 @@ class RoleMiddleware
      */
     public function handle(Request $request, Closure $next, $role)
     {
+        // Ensure the user is authenticated
         if (!Auth::check()) {
-            // Jika belum login, redirect ke login
             return redirect()->route('login');
         }
 
+        // Get the authenticated user
         $user = Auth::user();
 
-        if ($user->role !== $role && $user->Mahasiswa->angkatan > 2020) {
-            // Jika role tidak sesuai, tampilkan halaman 403 Forbidden
-            abort(403, 'Unauthorized action.');
+        // Check the role and apply the conditions accordingly
+        if ($role === 'admin') {
+            // Admin role: ensure the user has 'admin' role
+            if ($user->role !== 'admin') {
+                // If the user is not an admin, abort with 403 Forbidden
+                return redirect()->route('home')->with('error', 'Pengguna Bukan Admin');
+            }
         }
 
+        if ($role === 'alumni') {
+            // Alumni role: ensure the user has 'alumni' role and graduated in 2020 or later
+            if ($user->role !== 'alumni' || $user->Mahasiswa->angkatan < 2020) {
+                // If the user is not an alumni or graduated before 2020, abort with 403 Forbidden
+                return redirect()->route('home')->with('error', 'Pengguna Bukan Alumni');
+            }
+        }
+
+        // If all checks pass, continue to the next middleware or controller
         return $next($request);
     }
+
 }

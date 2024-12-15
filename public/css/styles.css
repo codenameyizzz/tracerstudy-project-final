@@ -65,13 +65,20 @@ nav .container {
     color: var(--primary-color);
 }
 
+.logo img {
+    width: auto; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    max-height: 80px; /* Set a maximum height to avoid overflow */
+    align-items: right; 
+}
+
 .logo span {
     color: var(--accent-color);
 }
 
 .nav-links {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     width: 100%;
 }
@@ -178,7 +185,6 @@ nav .container {
     border-radius: 50%;
     animation: fadeInRight 1s ease-in-out;
     transform: translateX(10%);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     filter: brightness(1.1);
 }
 
@@ -584,47 +590,73 @@ footer {
     background-color: var(--primary-color);
     color: #fff;
     padding: 40px 0;
-    text-align: center;
 }
 
 .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Align left and right sections */
+    align-items: flex-start; /* Align content to the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding: 20px 0; /* Add vertical spacing */
 }
 
-.footer-logo h1 {
-    margin: 0;
-    color: #fff;
+.footer-logo {
+    flex: 1; /* Take up equal space */
+    max-width: 50%; /* Ensure left side takes half the width */
+    text-align: left; /* Align text to the left */
 }
 
-.footer-logo span {
-    color: var(--accent-color);
+.footer-logo img {
+    max-width: 300px; /* Adjust logo size */
+    margin-bottom: 10px; /* Add spacing below the logo */
+    height: auto;
+    width: auto;
 }
 
-.footer-contact {
-    text-align: right;
-    /* Menempatkan teks ke kanan */
-    margin-bottom: 20px;
-    /* Jarak bawah */
-    width: 100%;
-    /* Memastikan elemen mengambil lebar penuh */
-    box-sizing: border-box;
-    /* Agar padding dan margin tidak mempengaruhi lebar */
+.footer-logo .contact-info p {
+    margin: 5px 0; /* Add spacing between text */
+    font-size: 14px; /* Adjust font size */
+    color: #f0f0f0; /* Light text color */
 }
 
-
-.footer-contact h4 {
-    margin-bottom: 10px;
-    color: var(--accent-color);
+.footer-logo .contact-info a {
+    color: var(--accent-color); /* Highlight link color */
+    text-decoration: none;
 }
 
-.footer-contact p {
-    margin: 5px 0;
-    color: #f0f0f0;
+.footer-logo .contact-info a:hover {
+    color: #fff; /* White on hover */
 }
+
+.footer-social {
+    flex: 1; /* Equal width for right section */
+    max-width: 50%; /* Ensure right side takes half the width */
+    text-align: right; /* Align content to the right */
+}
+
+.footer-social h4 {
+    margin-bottom: 10px; /* Add space below heading */
+    color: var(--accent-color); /* Highlight heading color */
+}
+
+.footer-social a {
+    color: #fff; /* Default color for icons */
+    font-size: 20px; /* Adjust icon size */
+    margin-left: 10px; /* Add spacing between icons */
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--accent-color); /* Change color on hover */
+}
+
+.footer-bottom {
+    text-align: center; /* Center the copyright text */
+    margin-top: 20px; /* Add spacing at the top */
+    font-size: 12px; /* Adjust font size */
+    color: #ccc; /* Light text color */
+}
+
 
 .social-links a {
     color: #fff;
@@ -656,6 +688,39 @@ footer p {
     color: var(--primary-color);
     margin-bottom: 40px;
 }
+
+.graph-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.graph-container .pie-chart,
+.graph-container .bar-chart {
+    flex: 1;
+    text-align: center;
+}
+
+.graph-container .bar-chart canvas {
+    width: 500px; /* Adjust the width of the bar chart */
+    height: 400px; /* Adjust the height of the bar chart */
+    max-width: 100%; /* Ensure responsiveness */
+    margin: 0 auto;
+}
+
+.graph-container .pie-chart canvas {
+    width: 400px;
+    height: 400px;
+    max-width: 100%; /* Ensure responsiveness */
+    margin: 0 auto;
+}
+
 
 form {
     max-width: 800px;

@@ -1,16 +1,14 @@
 <div class="row">
-    <div class="col-md">
-        <h5>Jumlah Mahasiswa Tiap Kategori</h5>
-        <canvas id="myChart"></canvas>
+    <div class="graph-container">
+        <div class="pie-chart">
+            <h5>Jumlah Mahasiswa Tiap Kategori</h5>
+            <canvas id="myChart2"></canvas>
+        </div>
+        <div class="bar-chart">
+            <h5>Perbandingan Pengisian Questioner</h5>
+            <canvas id="myChart"></canvas>
+        </div>
     </div>
-    <div class="col-md">
-        <h5>Perbandingan Pengisian Questioner</h5>
-        <canvas id="myChart2"></canvas>
-    </div>
-    {{-- <div class="col-md">
-        <h5>Berdasarkan Angkatan</h5>
-        <canvas id="myChart3"></canvas>
-    </div> --}}
 </div>
 
 <script>
