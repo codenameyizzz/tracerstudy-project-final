@@ -15,10 +15,23 @@ use App\Models\UserSurvey;
 
 class adminNavController extends Controller
 {
-    public function showDashboard()
-    {
-        return view("admin.app.dashboard");
-    }
+ public function showDashboard()
+{
+    // Data Jumlah Mahasiswa Tiap Kategori
+    $perbandingan_pengisian_questioner = [
+        'labels' => ['Bekerja', 'Belum Bekerja', 'Wiraswasta', 'Melanjutkan Pendidikan', 'Mencari Pekerjaan'],
+        'data' => [50, 30, 20, 15, 10] // Ganti dengan data real jika tersedia
+    ];
+
+    // Data Perbandingan Pengisian Questioner
+     $jumlah_mahasiswa_tiap_kategori = [
+        'labels' => ['Mengisi', 'Belum Mengisi'],
+        'data' => [120, 80] // Sesuaikan jumlah responden yang mengisi dan belum
+    ];
+
+    // Kirim ke view
+    return view("admin.app.dashboard", compact('jumlah_mahasiswa_tiap_kategori', 'perbandingan_pengisian_questioner'));
+}
 
     public function showQuestionnaire()
     {
