@@ -29,7 +29,14 @@ Route::middleware(['role:alumni'])->group(function () {
 Route::get('/usersurvey', [UserSurveyController::class, 'view'])->name('usersurvey');  // Tidak ada middleware 'auth'
 Route::post('/usersurvey', [UserSurveyController::class, 'store'])->name('usersurvey.store');  // Tidak ada middleware 'auth'
 
-Route::get('/report', [ReportController::class, 'view'])->name('report');
+Route::get('/report-show', [ReportController::class, 'view'])->name('report-show');
+Route::get('/report', [ReportController::class, 'viewCards'])->name('report');
+Route::get('/report-2021', function () {
+    return redirect()->route('report')->with('error', 'Report belum tersedia');
+})->name('report.2021');
+Route::get('/report-2022', function () {
+    return redirect()->route('report')->with('error', 'Report belum tersedia');
+})->name('report.2022');
 Route::get('/get-prodi', [ReportController::class, 'getProdi'])->name('report.get-prodi');
 Route::get('/get-tahun-angkatan', [ReportController::class, 'getAngkatan'])->name('report.get-tahun-angkatan');
 Route::get('/get-report', [ReportController::class, 'getReport'])->name('report.get-report');

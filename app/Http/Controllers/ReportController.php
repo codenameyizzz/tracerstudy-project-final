@@ -21,6 +21,12 @@ class ReportController extends Controller
         return view('report', compact('fakultas'));
     }
 
+    public function viewCards()
+    {
+        $fakultas = Fakultas::get();
+        return view('reports');
+    }
+
     public function getProdi(Request $request)
     {
         $fakultas_id = $request->fakultas_id;

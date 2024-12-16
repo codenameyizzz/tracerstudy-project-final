@@ -693,10 +693,12 @@ h6 {
   .toggle-sidebar #main,
   .toggle-sidebar #footer {
     margin-left: 0;
+    transition: margin-left 0.3s ease;
   }
 
   .toggle-sidebar .sidebar {
     left: -300px;
+    transition: all 0.3s ease;
   }
 }
 
