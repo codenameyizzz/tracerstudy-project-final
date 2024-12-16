@@ -48,7 +48,7 @@
         const jumlahMahasiswaData = @json($jumlah_mahasiswa_tiap_kategori);
 
         const configJumlahMahasiswa = {
-            type: 'pie',
+            type: 'bar',
             data: {
                 labels: jumlahMahasiswaData.labels,
                 datasets: [{
@@ -89,7 +89,7 @@
         const pengisianKuesionerData = @json($perbandingan_pengisian_questioner);
 
         const configPengisianKuesioner = {
-            type: 'bar',
+            type: 'pie',
             data: {
                 labels: pengisianKuesionerData.labels,
                 datasets: [{

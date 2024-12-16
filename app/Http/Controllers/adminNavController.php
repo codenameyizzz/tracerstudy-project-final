@@ -17,19 +17,42 @@ class adminNavController extends Controller
 {
  public function showDashboard()
 {
-    // Data Jumlah Mahasiswa Tiap Kategori
+    // Query dasar untuk mengambil semua mahasiswa
+    $mahasiswaData = Mahasiswa::query();
+
+    // Total Mahasiswa
+    $totalMahasiswa = $mahasiswaData->count();
+
+    // Fungsi untuk menghitung mahasiswa berdasarkan kategori
+    $kategori = ['bekerja', 'belum bekerja', 'wiraswasta', 'melanjutkan pendidikan', 'mencari pekerjaan'];
+    $dataJumlahKategori = [];
+
+    foreach ($kategori as $type) {
+        $count = $mahasiswaData->clone()->whereHas('User.Answers', function ($query) use ($type) {
+            $query->whereHas('Survey', function ($query) use ($type) {
+                $query->where('type', $type);
+            });
+        })->count();
+
+        $dataJumlahKategori[] = $count; // Menyimpan jumlah tiap kategori
+    }
+
+    // Data untuk Chart Jumlah Mahasiswa Tiap Kategori (Bar Chart)
+    $jumlah_mahasiswa_tiap_kategori = [
+        'labels' => $kategori,
+        'data' => $dataJumlahKategori,
+    ];
+
+    // Total Mahasiswa yang Mengisi Kuesioner
+    $totalMengisi = array_sum($dataJumlahKategori);
+
+    // Data untuk Chart Perbandingan Pengisian Questioner (Pie Chart)
     $perbandingan_pengisian_questioner = [
-        'labels' => ['Bekerja', 'Belum Bekerja', 'Wiraswasta', 'Melanjutkan Pendidikan', 'Mencari Pekerjaan'],
-        'data' => [50, 30, 20, 15, 10] // Ganti dengan data real jika tersedia
-    ];
-
-    // Data Perbandingan Pengisian Questioner
-     $jumlah_mahasiswa_tiap_kategori = [
         'labels' => ['Mengisi', 'Belum Mengisi'],
-        'data' => [120, 80] // Sesuaikan jumlah responden yang mengisi dan belum
+        'data' => [$totalMengisi, $totalMahasiswa - $totalMengisi],
     ];
 
-    // Kirim ke view
+    // Kirim data ke view dashboard
     return view("admin.app.dashboard", compact('jumlah_mahasiswa_tiap_kategori', 'perbandingan_pengisian_questioner'));
 }
 
