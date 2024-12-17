@@ -224,6 +224,18 @@ h6 {
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
 }
 
+.d-flex {
+  display: flex;
+  justify-content: space-between; /* Space between the two charts */
+  gap: 20px; /* Adds spacing between the two cards */
+}
+
+/* Chart Canvas */
+canvas {
+  width: 100% !important; /* Ensures the chart fills its parent container */
+  height: 400px !important; /* Set desired height */
+}
+  
 .card-header,
 .card-footer {
   border-color: #ebeef4;
@@ -249,6 +261,16 @@ h6 {
 .card-body {
   padding: 0 20px 20px 20px;
 }
+
+#chartPengisianKuesioner {
+  width: 600px; /* Set desired width */
+  height: 400px; /* Set desired height */
+  max-width: 100%; /* Ensure responsiveness */
+  margin: 0 auto; /* Center the chart horizontally */
+  display: block;
+}
+
+
 
 .card-img-overlay {
   background-color: rgba(255, 255, 255, 0.6);

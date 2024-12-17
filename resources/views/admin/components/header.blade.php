@@ -2,7 +2,7 @@
     <div class="d-flex align-items-center justify-content-between">
         <a href="{{ url('/admin') }}" class="logo d-flex align-items-center">
             {{-- <img src="assets/img/logo.png" alt=""> --}}
-            <span class="d-none d-lg-block logo" style="color: #2563EB">Tracer Study <span style="color: #FBBF24"> Admin</span></span>
+            <span class="d-none d-lg-block logo" style="color: #2563EB">TracerStudy <span style="color: #FBBF24"> Admin</span></span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->

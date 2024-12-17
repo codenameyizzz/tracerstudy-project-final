@@ -14,29 +14,25 @@
     <section class="section dashboard">
         <div class="row">
             <!-- Chart Section -->
-            <div class="col-lg-12">
-                <div class="row">
+            <div class="col-lg-12 mb-4">
+                <div class="d-flex justify-content-between align-items-center">
                     <!-- Chart 1: Bar Chart -->
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Perbandingan Pengisian Kuesioner</h5>
-                                <canvas id="chartPengisianKuesioner"></canvas>
-                            </div>
+                    <div class="card flex-fill me-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Perbandingan Pengisian Kuesioner</h5>
+                            <canvas id="chartPengisianKuesioner"></canvas>
                         </div>
                     </div>
-
                     <!-- Chart 2: Pie Chart -->
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Jumlah Mahasiswa Tiap Kategori</h5>
-                                <canvas id="chartJumlahMahasiswa"></canvas>
-                            </div>
+                    <div class="card flex-fill">
+                        <div class="card-body">
+                            <h5 class="card-title">Jumlah Mahasiswa Tiap Kategori</h5>
+                            <canvas id="chartJumlahMahasiswa"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
 </main>

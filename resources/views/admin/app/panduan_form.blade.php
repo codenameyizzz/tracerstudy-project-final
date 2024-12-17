@@ -44,21 +44,14 @@
               Fitur ini bersifat hanya untuk <strong>melihat data</strong> tanpa fungsi CRUD (Create, Read, Update, Delete) tambahan.
             </p>
 
-            <!-- Unggah Data -->
-            <h6>4. Unggah Data</h6>
-            <p>
-              Anda dapat mengunggah file dalam format <strong>Excel (.xlsx)</strong> atau <strong>CSV</strong> untuk memperbarui atau menambahkan data responden secara massal. 
-              Pastikan mengikuti format data sesuai template yang tersedia.
-            </p>
-
             <!-- Unduh Data -->
-            <h6>5. Unduh Data</h6>
+            <h6>4. Unduh Data</h6>
             <p>
               Admin dapat mengunduh semua data responden atau data kuisioner dalam format <strong>Excel (.xlsx)</strong> atau <strong>CSV</strong> untuk keperluan arsip atau analisis lanjutan.
             </p>
 
             <!-- User Survey -->
-            <h6>6. User Survey</h6>
+            <h6>5. User Survey</h6>
             <p>
               Fitur untuk memantau dan mengelola survei pengguna yang dikirimkan ke responden, seperti melihat progres pengisian kuisioner.
             </p>

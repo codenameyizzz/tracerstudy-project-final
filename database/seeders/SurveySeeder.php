@@ -265,7 +265,30 @@ class SurveySeeder extends Seeder
                             'type' => 'dropdown',
                             'options' => [
                                 [
-                                    "Banda Aceh", "Sabang", "Lhokseumawe", "Langsa", "Aceh Besar", "Aceh Utara", "Aceh Timur", "Aceh Tamiang", "Bener Meriah", "Bireuen", "Gayo Lues", "Nagan Raya", "Pidie", "Pidie Jaya", "Simeulue", "Aceh Selatan", "Aceh Singkil", "Aceh Barat", "Aceh Jaya", "Aceh Tenggara", "Aceh Barat Daya", "Aceh Tengah", "Aceh Pidie", "Aceh Tenggara"
+                                    "Banda Aceh",
+                                    "Sabang",
+                                    "Lhokseumawe",
+                                    "Langsa",
+                                    "Aceh Besar",
+                                    "Aceh Utara",
+                                    "Aceh Timur",
+                                    "Aceh Tamiang",
+                                    "Bener Meriah",
+                                    "Bireuen",
+                                    "Gayo Lues",
+                                    "Nagan Raya",
+                                    "Pidie",
+                                    "Pidie Jaya",
+                                    "Simeulue",
+                                    "Aceh Selatan",
+                                    "Aceh Singkil",
+                                    "Aceh Barat",
+                                    "Aceh Jaya",
+                                    "Aceh Tenggara",
+                                    "Aceh Barat Daya",
+                                    "Aceh Tengah",
+                                    "Aceh Pidie",
+                                    "Aceh Tenggara"
                                 ]
                             ]
                         ],
@@ -300,7 +323,7 @@ class SurveySeeder extends Seeder
                 'Berapa banyak perusahaan/instansi/institusi yang mengundang Anda untuk wawancara?',
                 'Apakah Anda aktif mencari pekerjaan dalam 4 minggu terakhir?',
                 'Jika menurut Anda pekerjaan Anda saat ini tidak sesuai dengan pendidikan Anda, mengapa Anda mengambilnya?'
-            ]
+            ];
         }
     }
 }
