@@ -1,7 +1,7 @@
 <nav>
     <div class="container">
         <div class="logo">
-            <img src="image/logo-del2.png">
+            <img src="{{asset('image/logo-del2.png')}}">
             {{-- <h1>Tracer<span>Study</span> IT Del</h1> --}}
         </div>
         <ul class="nav-links">

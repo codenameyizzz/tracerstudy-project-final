@@ -3,7 +3,7 @@
         <div class="footer-content">
             <!-- Left Section: Logo & Contact Info -->
             <div class="footer-logo">
-                <img src="image/logo-tracer2.png" alt="Logo IT Del" />
+                <img src="{{asset('image/logo-tracer2.png')}}" alt="Logo IT Del" />
                 <div class="contact-info">
                     <p>Institut Teknologi Del</p>
                     <p>📍 Jl. Sisingamangaraja, Sitoluama Laguboti, Kab. Toba, Sumut, Indonesia</p>
