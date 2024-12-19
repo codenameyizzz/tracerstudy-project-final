@@ -70,7 +70,9 @@
                 @endif
             </div>
             @endforeach
-            <button type="submit">Kirim</button>
+            <div class="submit-button">
+                <button type="submit" class="btn">Kirim</button>
+            </div>
         </form>
     </div>
 </section>

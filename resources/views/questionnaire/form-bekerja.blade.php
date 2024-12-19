@@ -687,7 +687,9 @@
             </script>
         </div>
 
-        <button type="submit">Kirim</button>
+        <div class="submit-button">
+            <button type="submit" class="btn">Kirim</button>
+        </div>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 const radioButtons = document.querySelectorAll('input[type="radio"]');
